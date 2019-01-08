@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="strivefatup-blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Ubuntu18.04使用Shadowsocks-Qt5 | strivefatup-blog</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="strivefatup-blog" type="application/atom+xml">
+
+
+    <link rel="icon" href="/img/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="strivefatup">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">strivefatup-blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Ubuntu18.04使用Shadowsocks-Qt5">
+            
+	            Ubuntu18.04使用Shadowsocks-Qt5
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/工具">
+            工具
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Ubuntu Shadowsocks-Qt5" title="Ubuntu Shadowsocks-Qt5">
+                        Ubuntu Shadowsocks-Qt5
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/01/08</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>Shadowsocks是一个非常稳定的科学上网工具此文介绍Shadowsocks在Ubuntu18.04配置和使用.</p>
+</blockquote>
+<p>我相信对于使用过Shadowsocks的人来说，一定会对其简单、快捷、稳定的特性有很深的感受，由于在Ubuntu18.04上面安装配置这个工具遇到过一些坑，为了防止以后忘记，故此记录。</p>
+<p>Shadowsocks工具github地址:<a href="https://github.com/shadowsocks" target="_blank" rel="noopener">https://github.com/shadowsocks</a></p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>shadowsocks-Qt5是ubuntu上一个可视化的工具。</p>
+<h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><p>网上的教程一般都是这样写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure></p>
+<p>第一行代码是添加软件的ppa源<br>然后执行update更新并安装shadowsocks-qt5  </p>
+<p>执行第一个命令就会报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">Shadowsocks-Qt5 is a cross-platform Shadowsocks GUI client.</span><br><span class="line">.....</span><br></pre></td></tr></table></figure></p>
+<p>错误原因是<strong>ppa:hzwhuang/ss-qt5</strong>并没有18.04版本的源<br>解决办法是将bionic(18.04版本代号)改成xenial(16.04版本代号)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list</span><br><span class="line"></span><br><span class="line">deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br><span class="line"># deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br><span class="line"># deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br><span class="line"># deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br></pre></td></tr></table></figure></p>
+<p>执行update更新并安装shadowsocks-qt5就不会报错了</p>
+<h1 id="Chrome或基于Chromium的浏览器"><a href="#Chrome或基于Chromium的浏览器" class="headerlink" title="Chrome或基于Chromium的浏览器"></a>Chrome或基于Chromium的浏览器</h1><p>下载并安装SwitchyOmega这个扩展程序 <a href="https://www.switchyomega.com/download/" target="_blank" rel="noopener">参考链接</a></p>
+<h5 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h5><p>从<a href="https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="noopener">Chrome应用商店安装</a>,如果您无法从该链接安装,请使用下面的离线安装.</p>
+<h5 id="离线安装"><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h5><p>去<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">Github下载</a>最新版安装包，或者直接<a href="https://www.switchyomega.com/file/Proxy-SwitchyOmega-Chromium-2.5.15.crx" target="_blank" rel="noopener">下载</a>文件进行安装。</p>
+<blockquote>
+<p>在Chrome地址栏输入chrome://extensions打开扩展程序,拖动.crx后缀的SwitchyOmega安装文件到扩展程序中进行安装.</p>
+</blockquote>
+<h1 id="Firefox或基于Mozilla的浏览器"><a href="#Firefox或基于Mozilla的浏览器" class="headerlink" title="Firefox或基于Mozilla的浏览器"></a>Firefox或基于Mozilla的浏览器</h1><p>下载并安装SwitchyOmega这个扩展程序</p>
+<h5 id="在线安装-1"><a href="#在线安装-1" class="headerlink" title="在线安装"></a>在线安装</h5><p>从<a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">Mozilla Add-Ons</a>安装。如果您无法从该链接安装，请使用下面的离线安装。</p>
+<h5 id="离线安装-1"><a href="#离线安装-1" class="headerlink" title="离线安装"></a>离线安装</h5><p>去<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">Github下载</a>最新版安装包，或者直接<a href="https://www.switchyomega.com/file/Proxy-Switchyomega-Firefox-2.5.16.xpi" target="_blank" rel="noopener">下载</a>文件进行安装。</p>
+<blockquote>
+<p>在Firefox地址栏输入about:addons打开插件管理(Add-Ons Manager)，选择扩展程序(Extensions)，拖动.xpi后缀的SwitchyOmega安装文件到扩展程序(Extensions)中进行安装。</p>
+</blockquote>
+<h1 id="shadowsocks-Qt5配置"><a href="#shadowsocks-Qt5配置" class="headerlink" title="shadowsocks-Qt5配置"></a>shadowsocks-Qt5配置</h1><p><img src="/img/shadowsocks-qt5.png" alt="">  </p>
+<p>注意:这里选择正确的本地服务器类型</p>
+<h1 id="SwitchyOmega配置"><a href="#SwitchyOmega配置" class="headerlink" title="SwitchyOmega配置"></a>SwitchyOmega配置</h1><p>这里以Chrome浏览器为例，如下图，点击选项  </p>
+<p><img src="/img/SwitchyOmega.png" alt="">   </p>
+<ul>
+<li>点击新建情景模式…  </li>
+<li>情景模式的名称自定义，情景模式的类型选择代理服务器，然后创建  </li>
+<li>配置完成如下图<br><img src="/img/ok.png" alt="">  </li>
+</ul>
+<p>分享结束，希望对你有所帮助。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/strivefatup" target="_blank">strivefatup</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'VdGGOHO6ovB4U6Ims2tATJF2-gzGzoHsz',
+            appKey: 'KDe6tp335ORvEmgVJtoSwu5m',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#说明"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install"><span class="toc-text">install</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#Chrome或基于Chromium的浏览器"><span class="toc-text">Chrome或基于Chromium的浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在线安装"><span class="toc-text">在线安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#离线安装"><span class="toc-text">离线安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Firefox或基于Mozilla的浏览器"><span class="toc-text">Firefox或基于Mozilla的浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在线安装-1"><span class="toc-text">在线安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#离线安装-1"><span class="toc-text">离线安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shadowsocks-Qt5配置"><span class="toc-text">shadowsocks-Qt5配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SwitchyOmega配置"><span class="toc-text">SwitchyOmega配置</span></a>
+        
+    </li></div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
