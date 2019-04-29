@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>归档：2019/1 | strivefatup-blog</title>
+<title>Windows子系统for Ubuntu | strivefatup-blog</title>
 
 
     <link rel="alternate" href="/atom.xml" title="strivefatup-blog" type="application/atom+xml">
@@ -128,163 +128,151 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-     <div class="timebox">
-          <div class="timeline">
-              <ul>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Windows子系统for Ubuntu">
+            
+	            Windows子系统for Ubuntu
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/工具">
+            工具
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
                 
+                    <a href="/tags/Ubuntu Linux Windows" title="Ubuntu Linux Windows">
+                        Ubuntu Linux Windows
+                    </a>
                 
-                    
-                    
-                        
-                            
-                            <h2>2019</h2>
-                        
-                        
-                          <li class="hide">
-                        
-                            <h3>
-                              29<span>04月</span>
-                            </h3>
-                            <a href="/2019/04/29/windos-for-ubuntu/" title="Windows子系统for Ubuntu" target="_blank">Windows子系统for Ubuntu</a>
-                        </li>
-                    
-                
-                    
-                    
-                        
-                        
-                          <li class="">
-                        
-                            <h3>
-                              08<span>01月</span>
-                            </h3>
-                            <a href="/2019/01/08/Shadowsocks-qt5/" title="Ubuntu18.04使用Shadowsocks-Qt5" target="_blank">Ubuntu18.04使用Shadowsocks-Qt5</a>
-                        </li>
-                    
-                
-              </ul>
-          </div>
-    </div>
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/29</span>
+        </span>
+        
+    
 </div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>Windows10 内置了Linux系统：WSL (Windows Subsystem for Linux, 又称Bash for Windows)。可以方便地在Win10里使用Ubuntu等Linux系统的命令行。</p>
+</blockquote>
+<p>Linux对开发人员是友好的，我们的应用程序一般都是部署在Linux环境下的，今天将给大家介绍一款在windows下的开发利器，不再为想使用windows下面的工具，又想使用Linux环境开发而纠结了。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>系统要求：windows10，支持虚拟化。特别说明：windows10有多个版本，这里选用专业版。</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
+<li><p>启用开发者模式<br>打开设置 -&gt; 点击更新和安全 -&gt; 点击开发者选项 -&gt; 启用开发人员模式 -&gt; 重启电脑</p>
+</li>
+<li><p>更改系统功能<br>点击应用和功能 -&gt; 相关设置下的程序和功能  -&gt; 选中应用或关闭Windows功能  -&gt; 勾选适用于Linux的Windows子系统 </p>
+</li>
+</ol>
+<h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><ol>
+<li><p>打开应用商店(Microsoft Store)</p>
+</li>
+<li><p>搜索ubuntu</p>
+</li>
+<li><p>选择需要安装的Ubuntu版本，建议选用Ubuntu 18.04 LTS</p>
+</li>
+</ol>
+<h2 id="进入Ubuntu系统"><a href="#进入Ubuntu系统" class="headerlink" title="进入Ubuntu系统"></a>进入Ubuntu系统</h2><ol>
+<li><p>打开cmd，输入命令bash进入Ubuntu系统</p>
+</li>
+<li><p>建议<a href="https://cmder.net/" target="_blank" rel="noopener">安装cmder</a>命令行工具，是windows下一款强大的bash工具</p>
+</li>
+</ol>
+<h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><p>通过ls命令可查看目录结构<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">bin  boot  dev  etc  home  init  lib  lib64  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var</span><br></pre></td></tr></table></figure></p>
+<p><strong>/mnt</strong>目录对应windows下面的目录<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> mnt/</span><br><span class="line">$ ls</span><br><span class="line">c  d  e  f</span><br></pre></td></tr></table></figure></p>
+<p>赶紧去试一下吧，让你的开发效率更快。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/strivefatup" target="_blank">strivefatup</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/01/08/Shadowsocks-qt5/" class="next-post btn btn-default" title="Ubuntu18.04使用Shadowsocks-Qt5">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Ubuntu18.04使用Shadowsocks-Qt5</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'VdGGOHO6ovB4U6Ims2tATJF2-gzGzoHsz',
+            appKey: 'KDe6tp335ORvEmgVJtoSwu5m',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
 
 
 
                 </main>
                 
-                    
-    <aside class="col-md-4 sidebar">
-        
-        
+                    <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">搜索</h3>
-        <div id="search-form">
-            <div id="result-mask" class="hide"></div>
-            <div class="search-area">
-                
-                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
-                
-                
-            </div>
-            <div id="result-wrap" class="hide">
-                <div id="search-result"></div>
-            </div>
-            <div class="hide">
-                <template id="search-tpl">
-                    <div class="item">
-                        <a href="/{path}" title="{title}">
-                            <div class="title">{title}</div>
-                            <div class="content">{content}</div>
-                        </a>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-
+        <h3 class="title">文章目录</h3>
         
-        
-    <div class="widget">
-        <h3 class="title">网站公告</h3>
-        <div class="notification">
-            <p>
-    主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br>
-    主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br>
-    支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
-</p>
-        </div>
-    </div>
-
-        
-        
-    <div class="widget">
-      <h3 class="title">社交</h3> 
-        <div class="content social">
-            
-	            <a href="//github.com/strivefatup" rel="external nofollow" title="Github" target="_blank">
-			    	<i class="git fa fa-git"></i>
-			    </a>
-            
-	            <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-			    	<i class="envelope-o fa fa-envelope-o"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-			    	<i class="qq fa fa-qq"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="微信" target="_blank">
-			    	<i class="weixin fa fa-weixin"></i>
-			    </a>
-            
-        </div>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/"><i class="fa" aria-hidden="true">工具</i></a><span class="category-list-count">2</span></li></ul>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/"><i class="fa" aria-hidden="true">2019年04月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">1</span></li></ul>
-    </div>
-
-
-        
-        
-  <div class="widget">
-    <h3 class="title">标签云</h3>
-    <div class="content tag-cloud">
-        
-            <a href="/tags/Ubuntu-Linux-Windows/" style="font-size: 10px;">Ubuntu Linux Windows</a> <a href="/tags/Ubuntu-Shadowsocks-Qt5/" style="font-size: 10px;">Ubuntu Shadowsocks-Qt5</a>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install"><span class="toc-text">install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进入Ubuntu系统"><span class="toc-text">进入Ubuntu系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hint"><span class="toc-text">Hint</span></a></li></ol>
         
     </div>
-  </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">友链</h3>
-        <div class="content friends-link">
-        
-            <a href="https://github.com/strivefatup" class="fa" target="_blank">github地址</a>
-        
-        </div>
-    </div>
-
-
-        
-    </aside>
+</aside>
 
                 
             </div>
@@ -327,8 +315,6 @@
     </div>
 </div>
 
-
-	<script src="/js/search.js?rev=@@hash"></script>
 
 
 

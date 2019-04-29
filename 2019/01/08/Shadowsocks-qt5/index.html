@@ -179,30 +179,29 @@
     
     <div class="post-body post-content">
         <blockquote>
-<p>Shadowsocks是一个非常稳定的科学上网工具此文介绍Shadowsocks在Ubuntu18.04配置和使用.</p>
+<p>Shadowsocks是一个非常稳定的科学上网工具此文介绍Shadowsocks在Ubuntu18.04配置和使用。</p>
 </blockquote>
 <p>我相信对于使用过Shadowsocks的人来说，一定会对其简单、快捷、稳定的特性有很深的感受，由于在Ubuntu18.04上面安装配置这个工具遇到过一些坑，为了防止以后忘记，故此记录。</p>
 <p>Shadowsocks工具github地址:<a href="https://github.com/shadowsocks" target="_blank" rel="noopener">https://github.com/shadowsocks</a></p>
 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>shadowsocks-Qt5是ubuntu上一个可视化的工具。</p>
 <h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><p>网上的教程一般都是这样写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure></p>
 <p>第一行代码是添加软件的ppa源<br>然后执行update更新并安装shadowsocks-qt5  </p>
-<p>执行第一个命令就会报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">Shadowsocks-Qt5 is a cross-platform Shadowsocks GUI client.</span><br><span class="line">.....</span><br></pre></td></tr></table></figure></p>
+<p>执行第一个命令就会报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">Shadowsocks-Qt5 is a cross-platform Shadowsocks GUI client。</span><br><span class="line">.....</span><br></pre></td></tr></table></figure></p>
 <p>错误原因是<strong>ppa:hzwhuang/ss-qt5</strong>并没有18.04版本的源<br>解决办法是将bionic(18.04版本代号)改成xenial(16.04版本代号)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list</span><br><span class="line"></span><br><span class="line">deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br><span class="line"># deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br><span class="line"># deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br><span class="line"># deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br></pre></td></tr></table></figure></p>
 <p>执行update更新并安装shadowsocks-qt5就不会报错了</p>
-<h1 id="Chrome或基于Chromium的浏览器"><a href="#Chrome或基于Chromium的浏览器" class="headerlink" title="Chrome或基于Chromium的浏览器"></a>Chrome或基于Chromium的浏览器</h1><p>下载并安装SwitchyOmega这个扩展程序 <a href="https://www.switchyomega.com/download/" target="_blank" rel="noopener">参考地址</a></p>
-<h5 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h5><p>从<a href="https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="noopener">Chrome应用商店安装</a>,如果您无法从该链接安装,请使用下面的离线安装.</p>
-<h5 id="离线安装"><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h5><p>去<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">Github下载</a>最新版安装包，或者直接<a href="https://www.switchyomega.com/file/Proxy-SwitchyOmega-Chromium-2.5.15.crx" target="_blank" rel="noopener">下载</a>文件进行安装。</p>
-<blockquote>
-<p>在Chrome地址栏输入chrome://extensions打开扩展程序,拖动.crx后缀的SwitchyOmega安装文件到扩展程序中进行安装.</p>
+<h3 id="Chrome或基于Chromium的浏览器"><a href="#Chrome或基于Chromium的浏览器" class="headerlink" title="Chrome或基于Chromium的浏览器"></a>Chrome或基于Chromium的浏览器</h3><p>下载并安装SwitchyOmega这个扩展程序 <a href="https://www.switchyomega.com/download/" target="_blank" rel="noopener">参考地址</a></p>
+<ol>
+<li>在线安装<br>从<a href="https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="noopener">Chrome应用商店安装</a>,如果您无法从该链接安装,请使用下面的离线安装。</li>
+<li>离线安装<br>去<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">Github下载</a>最新版安装包，或者直接<a href="https://www.switchyomega.com/file/Proxy-SwitchyOmega-Chromium-2.5.15.crx" target="_blank" rel="noopener">下载</a>文件进行安装。<blockquote>
+<p>在Chrome地址栏输入chrome://extensions打开扩展程序，拖动.crx后缀的SwitchyOmega安装文件到扩展程序中进行安装。</p>
 </blockquote>
-<h1 id="Firefox或基于Mozilla的浏览器"><a href="#Firefox或基于Mozilla的浏览器" class="headerlink" title="Firefox或基于Mozilla的浏览器"></a>Firefox或基于Mozilla的浏览器</h1><p>下载并安装SwitchyOmega这个扩展程序</p>
-<h5 id="在线安装-1"><a href="#在线安装-1" class="headerlink" title="在线安装"></a>在线安装</h5><p>从<a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">Mozilla Add-Ons</a>安装。如果您无法从该链接安装，请使用下面的离线安装。</p>
-<h5 id="离线安装-1"><a href="#离线安装-1" class="headerlink" title="离线安装"></a>离线安装</h5><p>去<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">Github下载</a>最新版安装包，或者直接<a href="https://www.switchyomega.com/file/Proxy-Switchyomega-Firefox-2.5.16.xpi" target="_blank" rel="noopener">下载</a>文件进行安装。</p>
-<blockquote>
+<h3 id="Firefox或基于Mozilla的浏览器"><a href="#Firefox或基于Mozilla的浏览器" class="headerlink" title="Firefox或基于Mozilla的浏览器"></a>Firefox或基于Mozilla的浏览器</h3>下载并安装SwitchyOmega这个扩展程序</li>
+<li>在线安装<br>从<a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">Mozilla Add-Ons</a>安装。如果您无法从该链接安装，请使用下面的离线安装。</li>
+<li>离线安装<br>去<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">Github下载</a>最新版安装包，或者直接<a href="https://www.switchyomega.com/file/Proxy-Switchyomega-Firefox-2.5.16.xpi" target="_blank" rel="noopener">下载</a>文件进行安装。<blockquote>
 <p>在Firefox地址栏输入about:addons打开插件管理(Add-Ons Manager)，选择扩展程序(Extensions)，拖动.xpi后缀的SwitchyOmega安装文件到扩展程序(Extensions)中进行安装。</p>
 </blockquote>
-<h1 id="shadowsocks-Qt5配置"><a href="#shadowsocks-Qt5配置" class="headerlink" title="shadowsocks-Qt5配置"></a>shadowsocks-Qt5配置</h1><p><img src="/img/shadowsocks-qt5.png" alt=""><br>注意:这里选择正确的本地服务器类型</p>
-<h1 id="SwitchyOmega配置"><a href="#SwitchyOmega配置" class="headerlink" title="SwitchyOmega配置"></a>SwitchyOmega配置</h1><p>这里以Chrome浏览器为例，如下图，点击选项  </p>
+<h3 id="shadowsocks-Qt5配置"><a href="#shadowsocks-Qt5配置" class="headerlink" title="shadowsocks-Qt5配置"></a>shadowsocks-Qt5配置</h3><img src="/img/shadowsocks-qt5.png" alt=""><br>注意:这里选择正确的本地服务器类型<h3 id="SwitchyOmega配置"><a href="#SwitchyOmega配置" class="headerlink" title="SwitchyOmega配置"></a>SwitchyOmega配置</h3>这里以Chrome浏览器为例，如下图，点击选项  </li>
+</ol>
 <p><img src="/img/SwitchyOmega.png" alt="">   </p>
 <ul>
 <li>点击新建情景模式…  </li>
@@ -226,6 +225,11 @@
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/04/29/windos-for-ubuntu/" class="pre-post btn btn-default" title="Windows子系统for Ubuntu">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Windows子系统for Ubuntu</span>
+        </a>
     
     
 </div>
@@ -268,9 +272,9 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#说明"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install"><span class="toc-text">install</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#Chrome或基于Chromium的浏览器"><span class="toc-text">Chrome或基于Chromium的浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在线安装"><span class="toc-text">在线安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#离线安装"><span class="toc-text">离线安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Firefox或基于Mozilla的浏览器"><span class="toc-text">Firefox或基于Mozilla的浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在线安装-1"><span class="toc-text">在线安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#离线安装-1"><span class="toc-text">离线安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shadowsocks-Qt5配置"><span class="toc-text">shadowsocks-Qt5配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SwitchyOmega配置"><span class="toc-text">SwitchyOmega配置</span></a>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#说明"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install"><span class="toc-text">install</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chrome或基于Chromium的浏览器"><span class="toc-text">Chrome或基于Chromium的浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Firefox或基于Mozilla的浏览器"><span class="toc-text">Firefox或基于Mozilla的浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shadowsocks-Qt5配置"><span class="toc-text">shadowsocks-Qt5配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SwitchyOmega配置"><span class="toc-text">SwitchyOmega配置</span></a></li></ol>
         
-    </li></div>
+    </div>
 </aside>
 
                 
