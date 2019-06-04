@@ -1,0 +1,684 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="strivefatup-blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>liunx常用命令 | strivefatup-blog</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="strivefatup-blog" type="application/atom+xml">
+
+
+    <link rel="icon" href="/img/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="strivefatup">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> PHP是世界上最好的语言 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">strivefatup-blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="liunx常用命令">
+            
+	            liunx常用命令
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/工具">
+            工具
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/CentOs Linux" title="CentOs Linux">
+                        CentOs Linux
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/06/04</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>Linux 是我们开发完成后,部署应用的标准系统,介绍一些常用的命令</p>
+</blockquote>
+<h3 id="tar-打包命令-压缩"><a href="#tar-打包命令-压缩" class="headerlink" title="tar 打包命令(压缩)"></a>tar 打包命令(压缩)</h3><p>选项:</p>
+<ol>
+<li>-c 打包</li>
+<li>-f 指定压缩包的文件名</li>
+<li>-v 显示打包文件过程<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 选项 -cvf 一般是习惯用法,打包时需要指定打包之后的文件名,而且要用".tar"作为扩展名</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tar -zvf fileNmae.tar sourceFile</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="tar-解打包命令-解压缩"><a href="#tar-解打包命令-解压缩" class="headerlink" title="tar 解打包命令(解压缩)"></a>tar 解打包命令(解压缩)</h3><p>选项:</p>
+<ol>
+<li>-x 解打包</li>
+<li>-f 指定压缩包的文件名</li>
+<li>-v 显示打包文件过程</li>
+<li>-t 测试,就是不解打包,只是査看包中有哪些文件</li>
+<li>-C 指定解打包位置<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解打包到当前目录下</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tar -xvf fileNmae.tar</span></span><br><span class="line"><span class="comment"># 解打包到当前指定目录下(/tmp/目录下)</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tar -xvf fileNmae.tar -C /tmp</span></span><br><span class="line"><span class="comment"># 査看文件包中有哪些文件</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tar -tvf fileNmae.tar</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="tar-gz和-tar-bz2格式"><a href="#tar-gz和-tar-bz2格式" class="headerlink" title=".tar.gz和.tar.bz2格式"></a><strong>.tar.gz</strong>和<strong>.tar.bz2</strong>格式</h3><p>选项:</p>
+<ol>
+<li>-z 压缩和解压缩 <strong>.tar.gz</strong>格式</li>
+<li>-j 压缩和街压缩 <strong>.tar.bz2</strong>格式</li>
+</ol>
+<p>压缩与解压缩 <strong>.tar.gz</strong>格式<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件或目录为 .tar.gz 格式</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tar -zcvf tmp.tar.gz sourceFile</span></span><br><span class="line"><span class="comment"># 解压缩文件或目录为 .tar.gz 格式</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tar -zxvf sourceFile.tar.gz -C /tmp</span></span><br></pre></td></tr></table></figure></p>
+<p>压缩与解压缩 <strong>.tar.bz2</strong>格式<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件或目录为 .tar.bz2 格式</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tar -jcvf tmp.tar.bz2 sourceFile</span></span><br><span class="line"><span class="comment"># 解压缩文件或目录为 .tar.bz2 格式</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tar -jxvf sourceFile.tar.bz2 -C /tmp</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="useradd-添加用户"><a href="#useradd-添加用户" class="headerlink" title="useradd (添加用户)"></a>useradd (添加用户)</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-u</td>
+<td style="text-align:left">手工指定用户的<strong>UID</strong>,注意<strong>UID</strong>的范围不要小于500</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">手工指定用户的主目录,主目录必须写绝对路径,如果手工指定主目录,则一定要注意权限</td>
+</tr>
+<tr>
+<td style="text-align:left">-c</td>
+<td style="text-align:left">手工指定/etc/passwd文件中各用户信息中第5个字段的描述性内容,可随意配置</td>
+</tr>
+<tr>
+<td style="text-align:left">-g</td>
+<td style="text-align:left">手工指定用户的初始组.一般以和用户名相同的组作为用户的初始组,在创建用户时会默认建立初始组.一旦手动指定,则系统将不会在创建此默认的初始组目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-G</td>
+<td style="text-align:left">指定用户的附加组.我们把用户加入其他组,一般都使用附加组</td>
+</tr>
+<tr>
+<td style="text-align:left">-s</td>
+<td style="text-align:left">手工指定用户的登录<strong>Shell</strong>,默认是 <strong>/bin/bash</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">-e</td>
+<td style="text-align:left">指定用户的失效曰期,格式为<strong>YYYY-MM-DD</strong>.也就是 <strong>/etc/shadow</strong>文件的第八个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-o</td>
+<td style="text-align:left">允许创建的用户的<strong>UID</strong>相同.例如,执行<strong>useradd -u 0 -o usertest</strong>命令建立用户<strong>usertest</strong>,它的<strong>UID</strong>和<strong>root</strong>用户的<strong>UID</strong>相同,都是0</td>
+</tr>
+<tr>
+<td style="text-align:left">-m</td>
+<td style="text-align:left">建立用户时强制建立用户的家目录.在建立系统用户时,该选项是默认的</td>
+</tr>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">创建系统用户,也就是<strong>UID</strong>在<strong>1~499</strong>之间,供系统程序使用的用户.由于系统用户主要用于运行系统所需服务的权限配置,因此系统用户的创建默认不会创建主目录</td>
+</tr>
+</tbody>
+</table>
+<p><strong>useradd</strong> 默认参数文件 <strong>/etc/default/useradd</strong><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建 test 普通用户</span></span><br><span class="line">[root@localhost ~]<span class="comment"># useradd test</span></span><br><span class="line"><span class="comment"># 创建 test 普通用户组</span></span><br><span class="line">[root@localhost ~]<span class="comment"># groupadd test</span></span><br><span class="line"><span class="comment"># 查看 useradd 默认参数设置</span></span><br><span class="line">[root@localhost ~]<span class="comment"># useradd -D</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="userdel-删除用户"><a href="#userdel-删除用户" class="headerlink" title="userdel (删除用户)"></a>userdel (删除用户)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -r 选项表示在删除 test 用户的同时删除 test 用户的家目录</span></span><br><span class="line">[root@localhost ~]<span class="comment"># userdel -r test</span></span><br></pre></td></tr></table></figure>
+<h3 id="passwd-设置密码"><a href="#passwd-设置密码" class="headerlink" title="passwd (设置密码)"></a>passwd (设置密码)</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-s</td>
+<td style="text-align:left">查询用户密码的状态,也就是 <strong>/etc/shadow</strong>文件中此用户密码的内容.仅<strong>root</strong>用户可用</td>
+</tr>
+<tr>
+<td style="text-align:left">-l</td>
+<td style="text-align:left">暂时锁定用户,该选项会在 <strong>/etc/shadow</strong>文件中指定用户的加密密码串前添加 <strong>!</strong>,使密码失效.仅<strong>root</strong>用户可用</td>
+</tr>
+<tr>
+<td style="text-align:left">-u</td>
+<td style="text-align:left">解锁用户,和 <strong>-l</strong>选项相对应,也是只能<strong>root</strong>用户使用</td>
+</tr>
+<tr>
+<td style="text-align:left">–stdin</td>
+<td style="text-align:left">可以将通过管道符输出的数据作为用户的密码.主要在批量添加用户时使用</td>
+</tr>
+<tr>
+<td style="text-align:left">-n</td>
+<td style="text-align:left">设置该用户修改密码后,多长时间不能再次修改密码,也就是修改 <strong>/etc/shadow</strong>文件中各行密码的第<strong>4</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-x</td>
+<td style="text-align:left">设置该用户的密码有效期,对应 <strong>/etc/shadow</strong>文件中各行密码的第<strong>5</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-w</td>
+<td style="text-align:left">设置用户密码过期前的警告天数,对于 <strong>/etc/shadow</strong>文件中各行密码的第<strong>6</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">设置用户密码失效日期,对应 <strong>/etc/shadow</strong>文件中各行密码的第<strong>7</strong>个字段</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改当前用户的密码</span></span><br><span class="line">[root@localhost ~]<span class="comment">#passwd</span></span><br><span class="line">Changing password <span class="keyword">for</span> user lamp.</span><br><span class="line">New password: //直接输入新的口令，但屏幕不会有任何反应</span><br><span class="line">BAD PASSWORD: it is WAY too short //口令太简单或过短的错误！这里只是警告信息，输入的密码依旧能用</span><br><span class="line">Retype new password:  //再次验证输入的密码，再输入一次即可</span><br><span class="line">passwd: all authentication tokens updated successfully.  //提示修改密码成功</span><br><span class="line"><span class="comment"># 修改 test 用户的密码</span></span><br><span class="line">[root@localhost ~]<span class="comment"># passwd test</span></span><br><span class="line"><span class="comment"># 查看 test 用户密码的状态</span></span><br><span class="line">[root@localhost ~]<span class="comment"># passwd -S test</span></span><br></pre></td></tr></table></figure>
+<h3 id="usermod-修改用户"><a href="#usermod-修改用户" class="headerlink" title="usermod (修改用户)"></a>usermod (修改用户)</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-c</td>
+<td style="text-align:left">修改用户的说明信息,即修改 <strong>/etc/shadow</strong>文件目标用户信息的第<strong>5</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">修改用户的主目录,即修改 <strong>/etc/shadow</strong>文件中目标用户信息的第<strong>6</strong>个字段,需要注意的是,主目录必须写绝对路径</td>
+</tr>
+<tr>
+<td style="text-align:left">-e</td>
+<td style="text-align:left">修改用户的失效曰期,格式为<strong>YYYY-MM-DD</strong>,即修改 <strong>/etc/shadow</strong>文件目标用户密码信息的第<strong>8</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-g</td>
+<td style="text-align:left">修改用户的初始组,即修改 <strong>/etc/passwd</strong>文件目标用户信息的第<strong>4</strong>个字段(GID)</td>
+</tr>
+<tr>
+<td style="text-align:left">-u</td>
+<td style="text-align:left">修改用户的<strong>UID</strong>,即修改 <strong>/etc/passwd</strong>文件目标用户信息的第<strong>3</strong>个字段(UID)</td>
+</tr>
+<tr>
+<td style="text-align:left">-G</td>
+<td style="text-align:left">修改用户的附加组,其实就是把用户加入其他用户组,即修改 <strong>/etc/group</strong>文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-l</td>
+<td style="text-align:left">修改用户名称</td>
+</tr>
+<tr>
+<td style="text-align:left">-L</td>
+<td style="text-align:left">临时锁定用户(Lock)</td>
+</tr>
+<tr>
+<td style="text-align:left">-U</td>
+<td style="text-align:left">解锁用户(Unlock),和 <strong>-L</strong>对应</td>
+</tr>
+<tr>
+<td style="text-align:left">-s</td>
+<td style="text-align:left">修改用户的登录<strong>Shell</strong>,默认是 <strong>/bin/bash</strong></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#锁定 test 用户</span></span><br><span class="line">[root@localhost ~]<span class="comment"># usermod -L test</span></span><br><span class="line"><span class="comment">#解锁 test 用户</span></span><br><span class="line">[root@localhost ~]<span class="comment"># usermod -U test</span></span><br><span class="line"><span class="comment">#把 test 用户加入 root组</span></span><br><span class="line">[root@localhost ~]<span class="comment"># usermod -G root test</span></span><br><span class="line"><span class="comment">#修改 test 用户说明</span></span><br><span class="line">[root@localhost ~]<span class="comment"># usermod -c "test user" test</span></span><br></pre></td></tr></table></figure>
+<h3 id="chage-修改用户密码状态"><a href="#chage-修改用户密码状态" class="headerlink" title="chage (修改用户密码状态)"></a>chage (修改用户密码状态)</h3><p><strong>chage</strong>的这个功能常和<strong>passwd</strong>批量初始化用户密码功能合用,来达到第一次登陆需要重新设置密码的目的</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-l</td>
+<td style="text-align:left">列出用户的详细密码状态</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">修改 <strong>/etc/shadow</strong>文件中指定用户密码信息的第<strong>3</strong>个字段,也就是最后一次修改密码的日期,格式为<strong>YYYY-MM-DD</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">-m</td>
+<td style="text-align:left">修改密码最短保留的天数,也就是 <strong>/etc/shadow</strong>文件中的第<strong>4</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-M</td>
+<td style="text-align:left">修改密码的有效期,也就是 <strong>/etc/shadow</strong>文件中的第<strong>5</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-W</td>
+<td style="text-align:left">修改密码到期前的警告天数,也就是 <strong>/etc/shadow</strong>文件中的第<strong>6</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">修改密码过期后的宽限天数,也就是 <strong>/etc/shadow</strong>文件中的第<strong>7</strong>个字段</td>
+</tr>
+<tr>
+<td style="text-align:left">-E</td>
+<td style="text-align:left">修改账号失效日期,格式为<strong>YYYY-MM-DD</strong>,也就是 <strong>/etc/shadow</strong>文件中的第<strong>8</strong>个字段</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看一下 test 用户密码状态</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chage -l test</span></span><br><span class="line"><span class="comment"># 设置 test 用户的密码: test</span></span><br><span class="line">[root@localhost ~]<span class="comment"># passwd test</span></span><br><span class="line"><span class="comment">#通过chage命令设置此账号密码创建的日期为1970年1月1日(0 就表示这一天),这样用户登陆后就必须修改密码</span></span><br><span class="line">[root@localhost ~]<span class="comment">#chage -d 0 test</span></span><br></pre></td></tr></table></figure>
+<h3 id="groupadd-添加用户组"><a href="#groupadd-添加用户组" class="headerlink" title="groupadd (添加用户组)"></a>groupadd (添加用户组)</h3><p>选项:</p>
+<ol>
+<li>-g: 指定组<strong>ID(GID)</strong></li>
+<li>-r: 创建系统群组<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加group1组</span></span><br><span class="line">[root@localhost ~]<span class="comment"># groupadd group1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="groupmod-修改用户组"><a href="#groupmod-修改用户组" class="headerlink" title="groupmod (修改用户组)"></a>groupmod (修改用户组)</h3><p>选项:</p>
+<ol>
+<li>-g: 修改组<strong>ID(GID)</strong></li>
+<li>-n: 修改组名<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把组名 group1 修改为 testgrp </span></span><br><span class="line">[root@localhost ~]<span class="comment"># groupmod -n testgrp group1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="groupdel-删除用户组"><a href="#groupdel-删除用户组" class="headerlink" title="groupdel (删除用户组)"></a>groupdel (删除用户组)</h3><p>此命令仅适用于删除那些<strong>不是任何用户初始组</strong>的群组,如果有群组还是某用户的初始群组,则无法使用<strong>groupdel</strong>命令成功删除<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除 group1 组</span></span><br><span class="line">[root@localhost ~]<span class="comment">#groupdel group1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="gpasswd-添加用户组"><a href="#gpasswd-添加用户组" class="headerlink" title="gpasswd (添加用户组)"></a>gpasswd (添加用户组)</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">选项为空时,表示给群组设置密码,仅<strong>root</strong>用户可用</td>
+</tr>
+<tr>
+<td style="text-align:left">-A</td>
+<td style="text-align:left">将群组的控制权交给 user1,… 等用户管理,设置 user1,… 等用户为群组的管理员,仅<strong>root</strong>用户可用</td>
+</tr>
+<tr>
+<td style="text-align:left">-M</td>
+<td style="text-align:left">将 user1,… 加入到此群组中,仅<strong>root</strong>用户可用</td>
+</tr>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">移除群组的密码,仅<strong>root</strong>用户可用</td>
+</tr>
+<tr>
+<td style="text-align:left">-R</td>
+<td style="text-align:left">让群组的密码失效,仅<strong>root</strong>用户可用</td>
+</tr>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">将 user 用户加入到群组中</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">将 user 用户从群组中移除</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建新群组 group1，并将群组交给 test 管理</span></span><br><span class="line">[root@localhost ~]<span class="comment"># groupadd group1  // 创建群组</span></span><br><span class="line">[root@localhost ~]<span class="comment"># gpasswd group1   // 设置密码吧</span></span><br><span class="line">Changing the password <span class="keyword">for</span> group group1</span><br><span class="line">New Password:</span><br><span class="line">Re-enter new password:</span><br><span class="line">[root@localhost ~]<span class="comment"># gpasswd -A test group1  // 加入群组管理员为 test</span></span><br><span class="line"><span class="comment"># 以test用户登陆系统,并将用户 test 和 test1 加入group1群组。</span></span><br><span class="line">[<span class="built_in">test</span>@localhost ~]<span class="comment">#gpasswd -a test group1</span></span><br><span class="line">[<span class="built_in">test</span>@localhost ~]<span class="comment">#gpasswd -a test1 group1</span></span><br></pre></td></tr></table></figure>
+<h3 id="chgrp-修改文件-目录的所属组"><a href="#chgrp-修改文件-目录的所属组" class="headerlink" title="chgrp(修改文件/目录的所属组)"></a>chgrp(修改文件/目录的所属组)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -R(注意是大写)选项,表示更改连同子目录中所有文件的所属组信息</span></span><br><span class="line"><span class="comment"># chgrp [-R] 所属组 文件名/目录名</span></span><br><span class="line"><span class="comment"># 修改test.log文件的所属组为group1</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chgrp group1 test.log</span></span><br></pre></td></tr></table></figure>
+<h3 id="chown-修改文件-目录的所有者和所属组"><a href="#chown-修改文件-目录的所有者和所属组" class="headerlink" title="chown(修改文件/目录的所有者和所属组)"></a>chown(修改文件/目录的所有者和所属组)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -R(注意是大写)选项,表示更改连同子目录中所有文件的所属组信息</span></span><br><span class="line"><span class="comment"># 当只需要修改所有者时,可使用如下 chown 命令的基本格式: chown [-R] 所有者</span></span><br><span class="line"><span class="comment"># 将 testFile 文件的所属用户改成 user</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chown user testFile</span></span><br><span class="line"><span class="comment"># 将 test 目录下中所有文件所属用户改成 user</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chown -R user test/</span></span><br><span class="line"><span class="comment"># 同时更改所有者和所属组,chown 命令的基本格式为: chown [-R] 所有者:所属组 文件/目录</span></span><br><span class="line"><span class="comment"># 将 testFile 文件的所属用户和所属组改成 user</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chown user:user testFile</span></span><br><span class="line"><span class="comment"># 将 test 目录下中所有文件所属用户和所属组改成 user</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chown -R user:user test/</span></span><br></pre></td></tr></table></figure>
+<h3 id="chmod-修改文件-目录的权限"><a href="#chmod-修改文件-目录的权限" class="headerlink" title="chmod(修改文件/目录的权限)"></a>chmod(修改文件/目录的权限)</h3><p>各个权限与数字的对应关系如下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">权限</th>
+<th style="text-align:left">数字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left">-w</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">-x</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<p>拿<strong>rwxrw-r-x</strong>来说,所有者、所属组和其他人分别对应的权限值为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">所有者 = rwx = 4+2+1 = 7</span><br><span class="line">所属组 = rw- = 4+2 = 6</span><br><span class="line">其他人 = r-x = 4+1 = 5</span><br><span class="line"># chmod [-R] 权限值 文件名</span><br><span class="line"># 设置 test 文件的权限为 777</span><br><span class="line">[root@localhost ~]# chmod -R 777 test</span><br><span class="line"># 设置 test 目录下的所有子文件的权限为 777</span><br><span class="line">[root@localhost ~]# chmod -R 777 test/</span><br><span class="line"># 权限前的字符,表示文件的具体类型,比如 d 表示目录,- 表示普通文件,l 表示连接文件,b 表示设备文件</span><br><span class="line">[root@localhost ~]# ls -l</span><br><span class="line">total 36</span><br><span class="line">drwxr-xr-x. 2 root root 4096 Apr 15 16:33 Desktop</span><br><span class="line">drwxr-xr-x. 2 root root 4096 Apr 15 16:33 Documents</span><br><span class="line">-rwxr-xr-x. 2 root root 4096 Apr 15 16:33 post-install</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h3 id="chattr-修改文件-目录的权限属性"><a href="#chattr-修改文件-目录的权限属性" class="headerlink" title="chattr(修改文件/目录的权限属性)"></a>chattr(修改文件/目录的权限属性)</h3><p><strong>chattr</strong>命令,专门用来修改文件或目录的隐藏属性,只有<strong>root</strong>用户可以使用.该命令的基本格式为:<br><code>[root@localhost ~]# chattr [+-=] [属性] 文件或目录名</code><br>+表示给文件或目录添加属性,-表示移除文件或目录拥有的某些属性,=表示给文件或目录设定一些属性</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">i</td>
+<td style="text-align:left">如果对文件设置<strong>i</strong>属性,那么不允许对文件进行删除、改名,也不能添加和修改数据;如果对目录设置<strong>i</strong>属性,那么只能修改目录下文件中的数据,但不允许建立和删除文件</td>
+</tr>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">如果对文件设置<strong>a</strong>属性,那么只能在文件中増加数据,但是不能删除和修改数据;如果对目录设置<strong>a</strong>属性,那么只允许在目录中建立和修改文件,但是不允许删除文件</td>
+</tr>
+<tr>
+<td style="text-align:left">u</td>
+<td style="text-align:left">设置此属性的文件或目录,在删除时,其内容会被保存,以保证后期能够恢复,常用来防止意外删除文件或目录</td>
+</tr>
+<tr>
+<td style="text-align:left">s</td>
+<td style="text-align:left">和<strong>u</strong>相反,删除文件或目录时,会被彻底删除(直接从硬盘上删除,然后用<strong>0</strong>填充所占用的区域),不可恢复</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 给 test 文件添加 i 属性</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chattr +i test</span></span><br><span class="line"><span class="comment"># 给 test 目录添加 i 属性</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chattr +i test/</span></span><br></pre></td></tr></table></figure>
+<h3 id="lsattr-查看文件系统属性"><a href="#lsattr-查看文件系统属性" class="headerlink" title="lsattr(查看文件系统属性)"></a>lsattr(查看文件系统属性)</h3><p>常用选项:</p>
+<ol>
+<li>-a 后面不带文件或目录名,表示显示所有文件和目录(包括隐藏文件和目录)</li>
+<li>-d 如果目标是目录,只会列出目录本身的隐藏属性,而不会列出所含文件或子目录的隐藏属性信息</li>
+<li>-R 和 <strong>-d</strong>恰好相反,作用于目录时,会连同子目录的隐藏信息数据也一并显示出来<br>lsattr 用于显示文件或目录的隐藏属性,其基本格式如下:<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># lsattr [选项] 文件或目录名</span></span><br><span class="line">[root@localhost ~]<span class="comment"># chattr +aij attrtest</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="ps-静态地查看系统中正在运行的进程"><a href="#ps-静态地查看系统中正在运行的进程" class="headerlink" title="ps(静态地查看系统中正在运行的进程)"></a>ps(静态地查看系统中正在运行的进程)</h3><p>选项:</p>
+<ol>
+<li>a 显示一个终端的所有进程，除会话引线外</li>
+<li>u 显示进程的归属用户及内存的使用情况</li>
+<li>x 显示没有控制终端的进程</li>
+<li>-l 长格式显示,显示更加详细的信息</li>
+<li>-e 显示所有进程<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看系统中所有的进程</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ps aux</span></span><br><span class="line"><span class="comment"># 查看系统中所有的进程,而且还能看到进程的父进程的PID和进程优先级</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ps -le</span></span><br><span class="line"><span class="comment"># 只能查看当前Shell产生的进程</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ps -l</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="top-显示命令运行时这个时间节点的进程状态"><a href="#top-显示命令运行时这个时间节点的进程状态" class="headerlink" title="top(显示命令运行时这个时间节点的进程状态)"></a>top(显示命令运行时这个时间节点的进程状态)</h3><p><strong>top</strong>命令格式如下:<br><code>[root@localhost ~]#top [选项]</code><br>选项:</p>
+<ol>
+<li>-d 秒数,指定<strong>top</strong>命令每隔几秒更新,默认是3秒</li>
+<li>-b 使用批处理模式输出.一般和 <strong>-n</strong>选项合用,用于把<strong>top</strong>命令重定向到文件中</li>
+<li>-n 次数,指定<strong>top</strong>命令执行的次数</li>
+<li>-p 指定<strong>PID</strong>只查看某个<strong>PID</strong>的进程</li>
+<li>-s 使<strong>top</strong>命令在安全模式中运行,避免在交互模式中出现错误,</li>
+<li>-u 用户名,只监听某个用户的进程<br><strong>top</strong>命令的交互模式中可以执行的命令:</li>
+<li>? 或<strong>h</strong>显示交互模式的帮助</li>
+<li>P 按照<strong>CPU</strong>的使用率排序,默认就是此选项</li>
+<li>M 按照内存的使用率排序</li>
+<li>N 按照<strong>PID</strong>排序</li>
+<li>T 按照<strong>CPU</strong>的累积运算时间排序,也就是按照(TIME+)项排序</li>
+<li>k 按照<strong>PID</strong>给予某个进程一个信号,一般用于中止某个进程</li>
+<li>r 按照<strong>PID</strong>给某个进程重设优先级(Nice)值</li>
+<li>q 退出<strong>top</strong>命令<h3 id="pstree-查看进程树"><a href="#pstree-查看进程树" class="headerlink" title="pstree(查看进程树)"></a>pstree(查看进程树)</h3><strong>pstree</strong>命令格式如下:<br><code>[root@localhost ~]# pstree [选项]</code><br>选项:</li>
+<li>-p 菜单进程的 PID</li>
+<li>-u 显示进接的所属用户<h3 id="kill-终止进程"><a href="#kill-终止进程" class="headerlink" title="kill(终止进程)"></a>kill(终止进程)</h3>命令格式如下:<br><code>[root@localhost ~]# kill [信号] PID</code><br>常见的进程信号:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">信号代号</th>
+<th style="text-align:left">信号名称</th>
+<th style="text-align:left">说 明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">SIGHUP</td>
+<td style="text-align:left">该信号让进程立即关闭,然后重新读取配置文件之后重启</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">SIGKILL</td>
+<td style="text-align:left">用来立即结束程序的运行,本信号不能被阻塞、处理和忽略,一般用于强制中止进程</td>
+</tr>
+<tr>
+<td style="text-align:left">15</td>
+<td style="text-align:left">SIGTERM</td>
+<td style="text-align:left">正常结束进程的信号,<strong>kill</strong>命令的默认信号</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 杀死PID是2248的进程,默认信号是15,正常停止</span></span><br><span class="line">[root@localhost ~]<span class="comment"># kill 2248</span></span><br><span class="line"><span class="comment"># 使用 -1 信号,让 PID 是2248主进程重新启动</span></span><br><span class="line">root@localhost ~]<span class="comment"># kill -1 2246</span></span><br><span class="line"><span class="comment"># 使用 -19 信号,让PID为2313的进程暂停.相当于在vi界面按Ctrl+Z快捷键</span></span><br><span class="line">[root@localhost ~]<span class="comment"># kill -19 2313</span></span><br></pre></td></tr></table></figure>
+<h3 id="killall-终止特定的一类进程"><a href="#killall-终止特定的一类进程" class="headerlink" title="killall(终止特定的一类进程)"></a>killall(终止特定的一类进程)</h3><p>命令格式如下:<br><code>[root@localhost ~]# killall [选项] [信号] 进程名</code><br>选项:</p>
+<ol>
+<li>-i 交互式,询问是否要杀死某个进程</li>
+<li>-l 忽略进程名的大小写</li>
+</ol>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/strivefatup" target="_blank">strivefatup</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/04/29/windos-for-ubuntu/" class="next-post btn btn-default" title="Windows子系统for Ubuntu">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Windows子系统for Ubuntu</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'VdGGOHO6ovB4U6Ims2tATJF2-gzGzoHsz',
+            appKey: 'KDe6tp335ORvEmgVJtoSwu5m',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-打包命令-压缩"><span class="toc-text">tar 打包命令(压缩)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-解打包命令-解压缩"><span class="toc-text">tar 解打包命令(解压缩)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-gz和-tar-bz2格式"><span class="toc-text">.tar.gz和.tar.bz2格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useradd-添加用户"><span class="toc-text">useradd (添加用户)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#userdel-删除用户"><span class="toc-text">userdel (删除用户)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#passwd-设置密码"><span class="toc-text">passwd (设置密码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#usermod-修改用户"><span class="toc-text">usermod (修改用户)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chage-修改用户密码状态"><span class="toc-text">chage (修改用户密码状态)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#groupadd-添加用户组"><span class="toc-text">groupadd (添加用户组)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#groupmod-修改用户组"><span class="toc-text">groupmod (修改用户组)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#groupdel-删除用户组"><span class="toc-text">groupdel (删除用户组)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gpasswd-添加用户组"><span class="toc-text">gpasswd (添加用户组)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chgrp-修改文件-目录的所属组"><span class="toc-text">chgrp(修改文件/目录的所属组)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chown-修改文件-目录的所有者和所属组"><span class="toc-text">chown(修改文件/目录的所有者和所属组)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chmod-修改文件-目录的权限"><span class="toc-text">chmod(修改文件/目录的权限)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chattr-修改文件-目录的权限属性"><span class="toc-text">chattr(修改文件/目录的权限属性)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lsattr-查看文件系统属性"><span class="toc-text">lsattr(查看文件系统属性)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps-静态地查看系统中正在运行的进程"><span class="toc-text">ps(静态地查看系统中正在运行的进程)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#top-显示命令运行时这个时间节点的进程状态"><span class="toc-text">top(显示命令运行时这个时间节点的进程状态)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pstree-查看进程树"><span class="toc-text">pstree(查看进程树)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kill-终止进程"><span class="toc-text">kill(终止进程)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#killall-终止特定的一类进程"><span class="toc-text">killall(终止特定的一类进程)</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
